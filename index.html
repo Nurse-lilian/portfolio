@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lilian Nyong · Registered Nurse · Telehealth & Virtual Patient Support</title>
+    <meta name="description"
+        content="Registered Nurse with 2+ years clinical experience in pediatric, maternal, and general care. Transitioning to telehealth, virtual patient support, and remote healthcare coordination." />
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="./assets/favicon.ico" />
+
+    <!-- ===== SOCIAL PREVIEW ===== -->
+    <meta property="og:title" content="Lilian Nyong · Registered Nurse · Telehealth & Virtual Patient Support" />
+    <meta property="og:description"
+        content="Registered Nurse with 2+ years clinical experience in pediatric, maternal, and general care. Transitioning to telehealth, virtual patient support, and remote healthcare coordination." />
+    <meta property="og:url" content="https://nurse-lilian.github.io/portfolio/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://nurse-lilian.github.io/portfolio/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lilian Nyong · Registered Nurse · Telehealth & Virtual Patient Support" />
+    <meta name="twitter:description"
+        content="Registered Nurse with 2+ years clinical experience in pediatric, maternal, and general care. Transitioning to telehealth, virtual patient support, and remote healthcare coordination." />
+    <meta name="twitter:image" content="https://nurse-lilian.github.io/portfolio/assets/og-image.png" />
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Google Fonts: Nunito + Merriweather -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Merriweather:wght@400;700;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ===== NOISE OVERLAY ===== -->
+    <div class="noise-overlay"></div>
+
+    <!-- ===== GLOW TRAIL ===== -->
+    <div class="glow-trail" id="glowTrail"></div>
+
+    <!-- ===== CUSTOM CURSOR ===== -->
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- ===== MEDICAL CROSS SHAPES (Background) ===== -->
+    <div class="medical-crosses" id="medicalCrosses">
+        <div class="cross"></div>
+        <div class="cross"></div>
+        <div class="cross"></div>
+        <div class="cross"></div>
+        <div class="cross"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#hero" class="logo">Lilian<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#work-samples">Samples</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Connect</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <!-- ECG CANVAS -->
+        <canvas id="ecgCanvas"></canvas>
+        <!-- Floating Medical Icons (particles) -->
+        <div class="particles-container" id="particlesContainer"></div>
+        <div class="hero-glow"></div>
+
+        <div class="container hero-container hero-reverse">
+            <!-- LEFT: Content -->
+            <div class="hero-content-right">
+                <div class="hero-badge">✦ Registered Nurse · Telehealth</div>
+                <h1 class="hero-title">
+                    I Help Healthcare Teams<br />
+                    <span class="typewriter-wrapper">
+                        <span id="typewriterText"></span>
+                        <span class="cursor-blink">|</span>
+                    </span>
+                </h1>
+                <p class="hero-subtitle">Registered Nurse (RN) with 2+ years clinical experience in pediatric, maternal,
+                    and general care. Transitioning to telehealth & virtual patient support.</p>
+
+                <div class="hero-trust-badges">
+                    <span><i class="fas fa-heartbeat"></i> Patient Assessment</span>
+                    <span><i class="fas fa-baby"></i> Maternal & Child Health</span>
+                    <span><i class="fas fa-video"></i> Telehealth Support</span>
+                    <span><i class="fas fa-file-medical-alt"></i> Clinical Documentation</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary btn-ripple">Book a Consultation</a>
+                    <a href="#services" class="btn btn-outline">View Services</a>
+                </div>
+
+                <!-- ===== TRUST BADGES ===== -->
+                <div class="trust-badges">
+                    <div class="trust-item">
+                        <strong class="trust-number" data-count="100" data-suffix="+">0</strong>
+                        <span>Patients Cared For</span>
+                    </div>
+                    <div class="trust-item">
+                        <strong class="trust-number" data-count="50" data-suffix="+">0</strong>
+                        <span>Telehealth Sessions</span>
+                    </div>
+                    <div class="trust-item">
+                        <strong class="trust-number" data-count="6" data-suffix="">0</strong>
+                        <span>Clinical Roles</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Image Frame (Spinning Ring) -->
+            <div class="hero-image-right">
+                <div class="hero-image-frame tilt-card">
+                    <div class="hero-image-inner">
+                        <!-- 👇 PLACEHOLDER: Drop photo as "lilian.png" -->
+                        <img src="./assets/lilian.png" alt="Lilian Nyong - Registered Nurse" />
+                        <div class="hero-image-overlay"></div>
+                    </div>
+                    <!-- SPINNING RING -->
+                    <div class="hero-image-ring spinning-ring"></div>
+                    <div class="hero-image-dots"></div>
+                    <div class="hero-image-badge">✦ RN · Telehealth</div>
+                </div>
+
+                <!-- STATS BAR (centered below image) -->
+                <div class="hero-stats-bar">
+                    <div class="stat-item">
+                        <strong class="counter" data-target="2" data-suffix="+">0</strong>
+                        <span>Years Clinical Experience</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <strong class="counter" data-target="6">0</strong>
+                        <span>Healthcare Roles</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <strong class="counter" data-target="3">0</strong>
+                        <span>Certifications & Training</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTRODUCTORY VIDEO SECTION ===== -->
+    <section class="intro-video" id="intro-video">
+        <div class="container intro-video-container">
+            <!-- LEFT: Video -->
+            <div class="intro-video-wrapper">
+                <video class="intro-video-player" id="introVideo" src="./assets/lilian_intro.mp4" autoplay muted loop
+                    playsinline preload="metadata"></video>
+                <!-- Sound Toggle Button (bottom-right) -->
+                <button class="video-sound-toggle" id="soundToggle" aria-label="Toggle sound">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
+                <!-- Decorative play icon -->
+                <div class="intro-video-overlay">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+            </div>
+
+            <!-- RIGHT: Text Content -->
+            <div class="intro-video-content">
+                <span class="section-tag">🎬 Watch My Introduction</span>
+                <h2 class="section-title">Hi, I'm <span>Lilian Nyong</span></h2>
+                <p>
+                    I'm a Registered Nurse with over 2 years of clinical experience
+                    in paediatric, maternal, and general care. I'm passionate about
+                    bridging the gap between clinical excellence and virtual health.
+                </p>
+                <p>
+                    In this short video, I share how I can support your healthcare team
+                    with telehealth solutions, patient coordination, and compassionate care.
+                </p>
+                <div class="intro-video-actions">
+                    <a href="#contact" class="btn btn-primary btn-ripple">Book a Consultation</a>
+                    <a href="#about" class="btn btn-outline">Learn More About Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-text-side">
+                    <span class="section-tag">About Me</span>
+                    <h2 class="section-title">Bridging Clinical Excellence <span>&amp; Virtual Health</span></h2>
+                    <p>I am a Registered Nurse (RN) with over 2 years of clinical experience across paediatric,
+                        maternal, outpatient, and general medical settings. I have worked in fast-paced hospital
+                        environments where accuracy, compassion, and quick decision-making are essential.</p>
+                    <p>I currently work in a paediatric and maternal care hospital, supporting maternal and child health
+                        through patient assessment, medication administration, newborn care, patient education, and
+                        accurate clinical documentation.</p>
+                    <p>I am actively transitioning into telehealth and remote healthcare support, currently completing
+                        formal training in Telehealth for Healthcare Providers. I am building practical expertise in
+                        virtual patient care, telemedicine workflows, SOAP documentation, and remote patient
+                        communication.</p>
+                    <p>With my Virtual Assistant certification, I am skilled in remote administrative support,
+                        professional communication, time management, and digital tools — enabling me to efficiently
+                        support clinicians, healthcare teams, and organizations in virtual settings.</p>
+                    <p style="font-weight: 700; color: var(--primary-light);">I am passionate about delivering safe,
+                        ethical, and patient-centered care while leveraging digital health and virtual support systems
+                        to improve healthcare access and continuity of care.</p>
+                    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px;">
+                        <a href="#contact" class="btn btn-primary btn-ripple">Book a Consultation</a>
+                        <a href="./assets/lilian_resume.pdf" download class="btn btn-download btn-ripple">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="about-highlights-cards">
+                    <div class="highlight-card">
+                        <i class="fas fa-user-md"></i>
+                        <h4>Clinical Nursing Expertise</h4>
+                        <p>Hands-on experience in paediatric, maternal, outpatient, and general medical care with a
+                            strong foundation in patient assessment and medication administration.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-video"></i>
+                        <h4>Telehealth-Ready</h4>
+                        <p>Formal training in Telehealth for Healthcare Providers with practical focus on virtual
+                            patient care, SOAP documentation, and remote communication.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>Clinical + Virtual Support</h4>
+                        <p>Bridging the gap between clinical nursing and remote virtual assistance to provide
+                            comprehensive, patient-centered support in healthcare settings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TOOLS (Expanded) ===== -->
+    <section class="tools-section" id="tools">
+        <div class="container">
+            <span class="section-tag">My Toolbox</span>
+            <h2 class="section-title">Tools I <span>Master</span></h2>
+            <div class="tools-grid">
+                <!-- Clinical Tools -->
+                <div class="tool-card"><i class="fas fa-file-medical-alt"></i><span>EHR Systems</span></div>
+                <div class="tool-card"><i class="fas fa-notes-medical"></i><span>SOAP Documentation</span></div>
+                <div class="tool-card"><i class="fas fa-heartbeat"></i><span>Patient Monitoring</span></div>
+                <!-- Telehealth -->
+                <div class="tool-card"><i class="fas fa-video"></i><span>Telehealth Platforms</span></div>
+                <div class="tool-card"><i class="fas fa-phone-medical"></i><span>Virtual Triage</span></div>
+                <div class="tool-card"><i class="fas fa-comments"></i><span>Zoom / Teams</span></div>
+                <!-- Admin -->
+                <div class="tool-card"><i class="fas fa-google"></i><span>Google Workspace</span></div>
+                <div class="tool-card"><i class="fas fa-calendar-alt"></i><span>Calendly</span></div>
+                <div class="tool-card"><i class="fab fa-slack"></i><span>Slack</span></div>
+                <div class="tool-card"><i class="fas fa-tasks"></i><span>ClickUp</span></div>
+                <div class="tool-card"><i class="fas fa-clock"></i><span>Toggl</span></div>
+                <div class="tool-card"><i class="fas fa-crm"></i><span>HubSpot</span></div>
+                <!-- Nursing Specific -->
+                <div class="tool-card"><i class="fas fa-pills"></i><span>Medication Mgmt</span></div>
+                <div class="tool-card"><i class="fas fa-baby"></i><span>Maternal Health Apps</span></div>
+                <div class="tool-card"><i class="fas fa-bandage"></i><span>Wound Care Apps</span></div>
+                <div class="tool-card"><i class="fas fa-syringe"></i><span>Vaccination Trackers</span></div>
+                <!-- General -->
+                <div class="tool-card"><i class="fas fa-brain"></i><span>Notion</span></div>
+                <div class="tool-card"><i class="fas fa-file-powerpoint"></i><span>MS Office</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="services-header">
+                <span class="section-tag">What I Do</span>
+                <h2 class="section-title">Nursing & <span>Telehealth Services</span></h2>
+                <p class="section-sub">Clinical nursing support combined with virtual assistance for healthcare
+                    professionals and organizations.</p>
+            </div>
+
+            <div class="services-grid-new">
+                <div class="service-new">
+                    <div class="service-new-icon"><i class="fas fa-stethoscope"></i></div>
+                    <h3>Virtual Patient Assessments</h3>
+                    <p>Conduct remote patient assessments, triage, and symptom evaluation with professional clinical
+                        judgment.</p>
+                    <span class="service-new-number">01</span>
+                </div>
+                <div class="service-new">
+                    <div class="service-new-icon"><i class="fas fa-baby"></i></div>
+                    <h3>Maternal & Child Health Support</h3>
+                    <p>Specialized support for maternal and child health, including newborn care education and patient
+                        follow-ups.</p>
+                    <span class="service-new-number">02</span>
+                </div>
+                <div class="service-new">
+                    <div class="service-new-icon"><i class="fas fa-phone-medical"></i></div>
+                    <h3>Telehealth Triage</h3>
+                    <p>Efficient telehealth triage, patient intake, and escalation of critical cases to healthcare
+                        providers.</p>
+                    <span class="service-new-number">03</span>
+                </div>
+                <div class="service-new">
+                    <div class="service-new-icon"><i class="fas fa-notes-medical"></i></div>
+                    <h3>SOAP Documentation & EHR</h3>
+                    <p>Accurate clinical documentation using SOAP format and professional management of electronic
+                        health records.</p>
+                    <span class="service-new-number">04</span>
+                </div>
+                <div class="service-new">
+                    <div class="service-new-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Remote Patient Monitoring</h3>
+                    <p>Support remote monitoring of vital signs, medication adherence, and chronic condition management.
+                    </p>
+                    <span class="service-new-number">05</span>
+                </div>
+                <div class="service-new">
+                    <div class="service-new-icon"><i class="fas fa-pills"></i></div>
+                    <h3>Medication Management Support</h3>
+                    <p>Medication reconciliation, patient education on prescriptions, and adherence monitoring.</p>
+                    <span class="service-new-number">06</span>
+                </div>
+                <div class="service-new">
+                    <div class="service-new-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Care Coordination</h3>
+                    <p>Coordinate care between patients, families, and multidisciplinary healthcare teams for seamless
+                        continuity.</p>
+                    <span class="service-new-number">07</span>
+                </div>
+                <div class="service-new">
+                    <div class="service-new-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Clinical Administrative Support</h3>
+                    <p>Professional administrative support including scheduling, reporting, and healthcare
+                        documentation.</p>
+                    <span class="service-new-number">08</span>
+                </div>
+                <div class="service-new">
+                    <div class="service-new-icon"><i class="fas fa-laptop-medical"></i></div>
+                    <h3>Telehealth Workflow Setup</h3>
+                    <p>Help healthcare providers set up efficient telehealth workflows, patient communication systems,
+                        and digital tools.</p>
+                    <span class="service-new-number">09</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE (with stats on hover) ===== -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="experience-header">
+                <span class="section-tag">Experience</span>
+                <h2 class="section-title">Where I've <span>Worked</span></h2>
+            </div>
+
+            <div class="experience-grid">
+                <!-- Role 1 -->
+                <div class="exp-item" data-impact="200+ patients cared for">
+                    <div class="exp-marker"></div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <h3>Registered Nurse</h3>
+                            <span class="exp-company">Pediatric & Maternal Care Hospital · Full-time</span>
+                            <span class="exp-date">Jan 2026 – Present · 7 mos</span>
+                        </div>
+                        <p>Supporting maternal and child health through patient assessment, medication administration,
+                            newborn care, patient education, and accurate clinical documentation.</p>
+                        <div class="exp-skills">
+                            <span>Patient Assessment</span>
+                            <span>Maternal Health</span>
+                            <span>Newborn Care</span>
+                            <span>Clinical Documentation</span>
+                        </div>
+                        <div class="exp-impact"><i class="fas fa-heartbeat"></i> <span>200+ patients cared for</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="exp-item" data-impact="150+ paediatric cases">
+                    <div class="exp-marker"></div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <h3>Registered Nurse</h3>
+                            <span class="exp-company">Diamond Crown Specialist Hospital · Full-time</span>
+                            <span class="exp-date">Nov 2024 – Jan 2026 · 1 yr 3 mos</span>
+                        </div>
+                        <p>Provided comprehensive paediatric care and performed suturing procedures in a specialist
+                            hospital setting.</p>
+                        <div class="exp-skills">
+                            <span>Paediatric Care</span>
+                            <span>Suturing</span>
+                            <span>Inpatient Care</span>
+                        </div>
+                        <div class="exp-impact"><i class="fas fa-heartbeat"></i> <span>150+ paediatric cases</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="exp-item" data-impact="500+ lab samples processed">
+                    <div class="exp-marker"></div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <h3>Registered Nurse</h3>
+                            <span class="exp-company">El Bene Hospital · Full-time</span>
+                            <span class="exp-date">Dec 2023 – Aug 2024 · 9 mos</span>
+                        </div>
+                        <p>Performed sample collection (HVS, FLP, Hormone profile, MP widal), vaginal examinations,
+                            instrument sterilization, enema administration, and IV cannulation.</p>
+                        <div class="exp-skills">
+                            <span>Sample Collection</span>
+                            <span>IV Cannulation</span>
+                            <span>Sterilization</span>
+                            <span>Vaginal Examination</span>
+                        </div>
+                        <div class="exp-impact"><i class="fas fa-heartbeat"></i> <span>500+ lab samples processed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 4 -->
+                <div class="exp-item" data-impact="100+ home care visits">
+                    <div class="exp-marker"></div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <h3>Registered Nurse (Intern)</h3>
+                            <span class="exp-company">General Hospital Calabar · Internship</span>
+                            <span class="exp-date">Nov 2025</span>
+                        </div>
+                        <p>Gained experience in nursing and home care within a general hospital setting.</p>
+                        <div class="exp-skills">
+                            <span>Nursing Care</span>
+                            <span>Home Care</span>
+                            <span>Patient Support</span>
+                        </div>
+                        <div class="exp-impact"><i class="fas fa-heartbeat"></i> <span>100+ home care visits</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 5 -->
+                <div class="exp-item" data-impact="300+ procedures assisted">
+                    <div class="exp-marker"></div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <h3>Registered Nurse</h3>
+                            <span class="exp-company">Ultimate Medical Consultants · Full-time</span>
+                            <span class="exp-date">Apr 2023 – Oct 2023 · 7 mos</span>
+                        </div>
+                        <p>Specialized in suctioning, oxygen administration, wound cleaning, catheterization, and
+                            nasogastric tube feeding.</p>
+                        <div class="exp-skills">
+                            <span>Suctioning</span>
+                            <span>Oxygen Administration</span>
+                            <span>Wound Care</span>
+                            <span>Catheterization</span>
+                            <span>NG Feeding</span>
+                        </div>
+                        <div class="exp-impact"><i class="fas fa-heartbeat"></i> <span>300+ procedures assisted</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 6 -->
+                <div class="exp-item" data-impact="50+ care protocols developed">
+                    <div class="exp-marker"></div>
+                    <div class="exp-content">
+                        <div class="exp-header">
+                            <h3>Registered Nurse (Intern)</h3>
+                            <span class="exp-company">General Hospital Calabar · Internship</span>
+                            <span class="exp-date">Nov 2022 – Dec 2022 · 2 mos</span>
+                        </div>
+                        <p>Developed and maintained quality care systems, created medical protocols, provided palliative
+                            care, administered medications, and assisted in diagnostic testing.</p>
+                        <div class="exp-skills">
+                            <span>Care Protocols</span>
+                            <span>Palliative Care</span>
+                            <span>Medication Administration</span>
+                            <span>Diagnostic Support</span>
+                        </div>
+                        <div class="exp-impact"><i class="fas fa-heartbeat"></i> <span>50+ care protocols
+                                developed</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WORK (Case Studies) ===== -->
+    <section class="work" id="work">
+        <div class="container">
+            <div class="work-header">
+                <span class="section-tag">Case Studies</span>
+                <h2 class="section-title">Clinical Excellence. <span>Virtual Impact.</span></h2>
+                <p class="section-sub">Click any card to view the full case study.</p>
+            </div>
+
+            <div class="work-grid-new">
+                <div class="work-new" data-case="telehealth">
+                    <div class="work-new-icon"><i class="fas fa-video"></i></div>
+                    <h3>Telehealth Patient Triage</h3>
+                    <p>Virtual triage system for a busy maternal health clinic</p>
+                    <span class="work-new-cta">View case study →</span>
+                </div>
+                <div class="work-new" data-case="maternal">
+                    <div class="work-new-icon"><i class="fas fa-baby"></i></div>
+                    <h3>Maternal Health Education</h3>
+                    <p>Patient education program for new mothers</p>
+                    <span class="work-new-cta">View case study →</span>
+                </div>
+                <div class="work-new" data-case="documentation">
+                    <div class="work-new-icon"><i class="fas fa-notes-medical"></i></div>
+                    <h3>SOAP Documentation System</h3>
+                    <p>Standardized clinical documentation workflow</p>
+                    <span class="work-new-cta">View case study →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CASE STUDY MODAL ===== -->
+    <div class="modal-overlay" id="caseModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- ===== WORK SAMPLES (Slow Continuous Carousel) ===== -->
+    <section class="work-samples" id="work-samples">
+        <div class="container">
+            <span class="section-tag">Work Samples</span>
+            <h2 class="section-title">My <span>Recent Work</span></h2>
+            <p class="section-sub">A glimpse into projects I've delivered in clinical and telehealth settings.</p>
+
+            <div class="work-samples-carousel-wrapper">
+                <div class="work-samples-track" id="workSamplesTrack">
+                    <!-- Sample 1 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/patient_calender_appointment.png" alt="Patient Calendar Management" />
+                            <div class="work-sample-overlay">
+                                <h3>Patient Calendar Management</h3>
+                                <p>Healthcare · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample 2 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/appointment_scheduler.png" alt="Appointment Scheduler" />
+                            <div class="work-sample-overlay">
+                                <h3>Appointment Scheduler</h3>
+                                <p>Healthcare · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample 3 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/telehealth_dashboard.png" alt="Telehealth Dashboard" />
+                            <div class="work-sample-overlay">
+                                <h3>Telehealth Dashboard</h3>
+                                <p>Virtual Care · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample 4 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/Telehealth patient guide.png" alt="Telehealth Patient Guide" />
+                            <div class="work-sample-overlay">
+                                <h3>Telehealth Patient Guide</h3>
+                                <p>Virtual Care · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample 5 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/emr_doc_sys.png" alt="EMR Documentation System" />
+                            <div class="work-sample-overlay">
+                                <h3>EMR Documentation System</h3>
+                                <p>Medical Records · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample 6 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/SOAP NOTES.png" alt="SOAP Notes" />
+                            <div class="work-sample-overlay">
+                                <h3>SOAP Notes</h3>
+                                <p>Clinical · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample 7 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/SOAP NOTES.png" alt="Nursing Handoff Report" />
+                            <div class="work-sample-overlay">
+                                <h3>Nursing Handoff Report</h3>
+                                <p>Clinical · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample 8 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/inbox_management.jpg" alt="Inbox Management" />
+                            <div class="work-sample-overlay">
+                                <h3>Inbox Management</h3>
+                                <p>Communication · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample 9 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/insurance_verification.png" alt="Insurance Verification" />
+                            <div class="work-sample-overlay">
+                                <h3>Insurance Verification</h3>
+                                <p>Billing · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample 10 -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/medication sheet tracker.png" alt="Medication Tracker" />
+                            <div class="work-sample-overlay">
+                                <h3>Medication Tracker</h3>
+                                <p>Patient Care · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate first 2 for seamless loop -->
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/patient_calender_appointment.png" alt="Patient Calendar Management" />
+                            <div class="work-sample-overlay">
+                                <h3>Patient Calendar Management</h3>
+                                <p>Healthcare · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-sample-item">
+                        <div class="work-sample-image">
+                            <img src="./assets/appointment_scheduler.png" alt="Appointment Scheduler" />
+                            <div class="work-sample-overlay">
+                                <h3>Appointment Scheduler</h3>
+                                <p>Healthcare · 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Clients <span>Say</span></h2>
+            </div>
+
+            <div class="testimonial-carousel-wrapper">
+                <div class="testimonial-carousel-track" id="testimonialCarouselTrack">
+                    <div class="testimonial-carousel-item">
+                        <div class="testimonial-carousel-content">
+                            <div class="testimonial-carousel-quote">"</div>
+                            <p>Lilian's clinical expertise and compassionate approach made a real difference in our
+                                maternal health program. She connected with patients instantly and provided excellent
+                                education and support.</p>
+                            <div class="testimonial-carousel-author">
+                                <div class="testimonial-carousel-avatar">D</div>
+                                <div>
+                                    <strong>Dr. A. Okon</strong>
+                                    <span>Maternal Health Specialist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-carousel-item">
+                        <div class="testimonial-carousel-content">
+                            <div class="testimonial-carousel-quote">"</div>
+                            <p>She quickly adapted to our telehealth workflows and brought a level of professionalism
+                                that exceeded our expectations. Her SOAP documentation was always accurate and timely.
+                            </p>
+                            <div class="testimonial-carousel-author">
+                                <div class="testimonial-carousel-avatar">M</div>
+                                <div>
+                                    <strong>Dr. M. Ekpo</strong>
+                                    <span>Telehealth Director</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-carousel-item">
+                        <div class="testimonial-carousel-content">
+                            <div class="testimonial-carousel-quote">"</div>
+                            <p>Lilian's background in paediatrics and maternal care is invaluable. She handled complex
+                                patient cases with ease and always communicated clearly with our team.</p>
+                            <div class="testimonial-carousel-author">
+                                <div class="testimonial-carousel-avatar">S</div>
+                                <div>
+                                    <strong>Dr. S. Bassey</strong>
+                                    <span>Paediatric Consultant</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-carousel-item">
+                        <div class="testimonial-carousel-content">
+                            <div class="testimonial-carousel-quote">"</div>
+                            <p>She went above and beyond in coordinating care for our patients. Her attention to detail
+                                and proactive follow-ups ensured no one fell through the cracks.</p>
+                            <div class="testimonial-carousel-author">
+                                <div class="testimonial-carousel-avatar">C</div>
+                                <div>
+                                    <strong>Dr. C. Udo</strong>
+                                    <span>Clinic Administrator</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-carousel-item">
+                        <div class="testimonial-carousel-content">
+                            <div class="testimonial-carousel-quote">"</div>
+                            <p>Lilian helped us set up a remote patient monitoring system that improved our chronic care
+                                management significantly. Her nursing insight was key to its success.</p>
+                            <div class="testimonial-carousel-author">
+                                <div class="testimonial-carousel-avatar">F</div>
+                                <div>
+                                    <strong>Dr. F. Eze</strong>
+                                    <span>Internal Medicine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-carousel-item">
+                        <div class="testimonial-carousel-content">
+                            <div class="testimonial-carousel-quote">"</div>
+                            <p>Her ability to transition from bedside nursing to virtual patient support was seamless.
+                                She truly understands how to make patients feel heard and cared for, even remotely.</p>
+                            <div class="testimonial-carousel-author">
+                                <div class="testimonial-carousel-avatar">N</div>
+                                <div>
+                                    <strong>Dr. N. Obi</strong>
+                                    <span>Family Medicine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-carousel-item">
+                        <div class="testimonial-carousel-content">
+                            <div class="testimonial-carousel-quote">"</div>
+                            <p>Lilian was instrumental in developing our patient education materials. Her clear
+                                communication style and clinical knowledge made complex topics easy for patients to
+                                understand.</p>
+                            <div class="testimonial-carousel-author">
+                                <div class="testimonial-carousel-avatar">G</div>
+                                <div>
+                                    <strong>Dr. G. Okon</strong>
+                                    <span>Health Education Lead</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-carousel-item">
+                        <div class="testimonial-carousel-content">
+                            <div class="testimonial-carousel-quote">"</div>
+                            <p>Her experience in general and specialist hospitals gave her a broad perspective that was
+                                incredibly valuable. She anticipates clinical needs before they arise.</p>
+                            <div class="testimonial-carousel-author">
+                                <div class="testimonial-carousel-avatar">T</div>
+                                <div>
+                                    <strong>Dr. T. Eyo</strong>
+                                    <span>Hospital Administrator</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate first 3 for seamless loop -->
+                    <div class="testimonial-carousel-item">
+                        <div class="testimonial-carousel-content">
+                            <div class="testimonial-carousel-quote">"</div>
+                            <p>Lilian's clinical expertise and compassionate approach made a real difference in our
+                                maternal health program. She connected with patients instantly and provided excellent
+                                education and support.</p>
+                            <div class="testimonial-carousel-author">
+                                <div class="testimonial-carousel-avatar">D</div>
+                                <div>
+                                    <strong>Dr. A. Okon</strong>
+                                    <span>Maternal Health Specialist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-carousel-dots" id="testimonialDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS (Text List Only – No Images) ===== -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <span class="section-tag">Certifications & Education</span>
+            <h2 class="section-title">Professional <span>Credentials</span></h2>
+
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Registered Nurse (RN)</h3>
+                    <p>School of Nursing and Midwifery Calabar · Nov 2019 – Nov 2022 · Nursing and Midwifery Council of
+                        Nigeria certified.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-laptop-medical"></i></div>
+                    <h3>Telehealth for Healthcare Providers</h3>
+                    <p>In progress — Formal training focused on virtual patient care, telemedicine workflows, SOAP
+                        documentation, and remote patient communication.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Certified Virtual Assistant</h3>
+                    <p>Comprehensive training in remote administrative support, professional communication, time
+                        management, and digital tools for healthcare settings.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-university"></i></div>
+                    <h3>Bachelor of Nursing (In Progress)</h3>
+                    <p>Miva Open University — Advancing nursing education and professional development.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>High School Diploma — Science</h3>
+                    <p>Presbyterian Senior Science School, Ididep — Strong foundation in sciences.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-star"></i></div>
+                    <h3>First School Leaving Certificate (FSLC)</h3>
+                    <p>St. Peter's School — Early education certification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WORKFLOW ===== -->
+    <section class="workflow" id="workflow">
+        <div class="container">
+            <span class="section-tag">My Process</span>
+            <h2 class="section-title">My <span>Workflow</span></h2>
+            <p class="section-sub">Every engagement follows a proven clinical and virtual support process designed to
+                deliver consistent, patient-centered results.</p>
+
+            <div class="workflow-grid">
+                <div class="workflow-step">
+                    <div class="workflow-number">01</div>
+                    <h3>Discovery & Assessment</h3>
+                    <p>I start by understanding your healthcare setting, clinical workflows, and patient population to
+                        ensure seamless integration with your team.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-number">02</div>
+                    <h3>Clinical Execution</h3>
+                    <p>Tasks are completed with clinical precision — from patient assessments and documentation to care
+                        coordination and telehealth support.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-number">03</div>
+                    <h3>Documentation & Reporting</h3>
+                    <p>Regular updates and comprehensive documentation keep you informed and ensure continuity of care
+                        using your preferred format.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-number">04</div>
+                    <h3>Review & Continuous Improvement</h3>
+                    <p>Ongoing feedback and quality review ensure our collaboration becomes more effective over time,
+                        always prioritizing patient outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY WORK WITH ME ===== -->
+    <section class="why-work" id="why-work">
+        <div class="container">
+            <span class="section-tag">Why Work With Me</span>
+            <h2 class="section-title">Why <span>Choose Me</span></h2>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Clinical Expertise</h3>
+                    <p>Over 2 years of hands-on nursing experience across paediatric, maternal, and general care
+                        settings.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Compassionate Care</h3>
+                    <p>Patient-centered approach that prioritizes safety, dignity, and positive health outcomes.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Telehealth-Ready</h3>
+                    <p>Formally trained in telehealth workflows, virtual patient communication, and remote care
+                        coordination.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Reliable & Professional</h3>
+                    <p>Consistent, transparent, and professional communication — always delivering on time and to
+                        standard.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Patient-Centered</h3>
+                    <p>Every decision is guided by what's best for the patient, ensuring ethical and high-quality care.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <span class="section-tag">Connect</span>
+                    <h2 class="section-title">Let's <span>Elevate Patient Care Together</span></h2>
+                    <p>Ready to bring clinical excellence into your telehealth practice or healthcare team? I'm here to
+                        support your patients and your workflow.</p>
+                    <p style="font-weight: 500; color: var(--primary-light);">Whether you need virtual nursing support,
+                        care coordination, or help setting up efficient telehealth systems, I'd love to learn about your
+                        needs and explore how we can work together.</p>
+                    <div class="contact-social">
+                        <a href="https://www.linkedin.com/in/lilian-nyong-716678257" target="_blank"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/liliannyong" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@nyonglilian7" target="_blank" aria-label="TikTok"><i
+                                class="fab fa-tiktok"></i></a>
+                        <a href="mailto:nyonglilian7@gmail.com" target="_blank" aria-label="Email"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="https://calendly.com/nyonglilian7/30min" target="_blank" aria-label="Calendly"><i
+                                class="fas fa-calendar-plus"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <div style="margin-bottom: 16px; text-align: center;">
+                        <a href="https://calendly.com/nyonglilian7/30min" target="_blank"
+                            class="btn btn-primary btn-block"
+                            style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 36px; border-radius: 40px; font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); background: linear-gradient(135deg, #2E4AD6, #5B72E0); color: var(--white); border: none; cursor: pointer; width: 100%; box-shadow: 0 4px 16px rgba(46, 74, 214, 0.3);">
+                            <i class="fas fa-calendar-check"></i> Schedule a Consultation
+                        </a>
+                    </div>
+
+                    <form id="contactForm" action="https://formspree.io/f/xrpzanwa" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your name" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email address" required />
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message"
+                                placeholder="Tell me about your healthcare setting and what support you need..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+
+                    <div style="margin-top: 16px; text-align: center;">
+                        <a href="./assets/lilian_resume.pdf" download class="btn btn-download btn-block"
+                            style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 36px; border-radius: 40px; font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); border: 1.5px solid var(--primary-light); color: var(--primary-light); background: transparent; width: 100%;">
+                            <i class="fas fa-download"></i> Download Resume / CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Lilian Nyong · Registered Nurse · Telehealth & Virtual Patient Support</p>
+            <p class="footer-tagline">Delivering Compassionate Care, Wherever You Are.</p>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
