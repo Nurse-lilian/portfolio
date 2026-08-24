@@ -499,7 +499,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 // ============================================
-// WORK SAMPLES – SMOOTH CONTINUOUS CAROUSEL (FASTER)
+// WORK SAMPLES – SMOOTH CONTINUOUS CAROUSEL
 // ============================================
 (function initContinuousCarousel() {
     const track = document.getElementById('workSamplesTrack');
@@ -508,7 +508,7 @@ document.addEventListener('keydown', function (e) {
     let scrollPos = 0;
     let animationId = null;
     let isPaused = false;
-    let speed = 0.7; // pixels per frame – faster but still smooth
+    let speed = 0.7;
     let totalScrollWidth = 0;
     let itemWidth = 0;
     const gap = 24;
@@ -589,7 +589,7 @@ document.addEventListener('keydown', function (e) {
 })();
 
 // ============================================
-// TESTIMONIALS AUTO CAROUSEL
+// TESTIMONIALS AUTO CAROUSEL (2 Items)
 // ============================================
 const track = document.getElementById('testimonialCarouselTrack');
 const dotsContainer = document.getElementById('testimonialDots');
@@ -602,13 +602,13 @@ let isTransitioning = false;
 function getItemsPerView() {
     if (window.innerWidth < 768) return 1;
     if (window.innerWidth < 1024) return 2;
-    return 3;
+    return 2; // Max 2 items since we only have 2 testimonials
 }
 
 function createDots() {
     if (!dotsContainer) return;
     const itemsPerView = getItemsPerView();
-    const totalDots = 3;
+    const totalDots = Math.ceil(totalItems / itemsPerView);
     dotsContainer.innerHTML = '';
     for (let i = 0; i < totalDots; i++) {
         const dot = document.createElement('button');
@@ -746,14 +746,37 @@ if (video && soundToggle) {
 }
 
 // ============================================
-// CONTACT FORM
+// CONTACT FORM – AJAX (fetch) with auto-reset
 // ============================================
 const form = document.getElementById('contactForm');
 if (form) {
     form.addEventListener('submit', function (e) {
+        e.preventDefault();
         const btn = this.querySelector('.btn');
+        const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         btn.disabled = true;
+
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('✅ Message sent successfully! I\'ll get back to you soon.');
+                this.reset();
+            } else {
+                alert('❌ Something went wrong. Please try again.');
+            }
+        })
+        .catch(() => {
+            alert('❌ Network error. Please check your connection and try again.');
+        })
+        .finally(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
     });
 }
 
