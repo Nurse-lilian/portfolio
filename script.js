@@ -38,7 +38,7 @@ if (navToggle && navLinks) {
 // SMOOTH SCROLL
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function (e) {
+    link.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
         if (targetId && targetId !== '#') {
             const target = document.querySelector(targetId);
@@ -283,7 +283,7 @@ document.querySelectorAll('.tilt-card').forEach(card => {
 // BUTTON RIPPLE
 // ============================================
 document.querySelectorAll('.btn-ripple').forEach(btn => {
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener('click', function(e) {
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -440,7 +440,7 @@ const modalContent = document.getElementById('modalContent');
 const modalClose = document.getElementById('modalClose');
 
 document.querySelectorAll('.work-new').forEach(card => {
-    card.addEventListener('click', function () {
+    card.addEventListener('click', function() {
         const caseKey = this.dataset.case;
         const study = caseStudies[caseKey];
         if (!study) return;
@@ -486,20 +486,20 @@ function closeModal() {
 
 modalClose.addEventListener('click', closeModal);
 
-modalOverlay.addEventListener('click', function (e) {
+modalOverlay.addEventListener('click', function(e) {
     if (e.target === this) {
         closeModal();
     }
 });
 
-document.addEventListener('keydown', function (e) {
+document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeModal();
     }
 });
 
 // ============================================
-// WORK SAMPLES – SMOOTH CONTINUOUS CAROUSEL (FASTER)
+// WORK SAMPLES – SMOOTH CONTINUOUS CAROUSEL
 // ============================================
 (function initContinuousCarousel() {
     const track = document.getElementById('workSamplesTrack');
@@ -508,7 +508,7 @@ document.addEventListener('keydown', function (e) {
     let scrollPos = 0;
     let animationId = null;
     let isPaused = false;
-    let speed = 0.7; // pixels per frame – faster but still smooth
+    let speed = 0.7;
     let totalScrollWidth = 0;
     let itemWidth = 0;
     const gap = 24;
@@ -549,18 +549,18 @@ document.addEventListener('keydown', function (e) {
 
     const wrapper = document.querySelector('.work-samples-carousel-wrapper');
     if (wrapper) {
-        wrapper.addEventListener('mouseenter', function () {
+        wrapper.addEventListener('mouseenter', function() {
             isPaused = true;
         });
-        wrapper.addEventListener('mouseleave', function () {
+        wrapper.addEventListener('mouseleave', function() {
             isPaused = false;
         });
     }
 
     let resizeTimer;
-    window.addEventListener('resize', function () {
+    window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
+        resizeTimer = setTimeout(function() {
             calculateDimensions();
             if (scrollPos >= totalScrollWidth) {
                 scrollPos = 0;
@@ -570,8 +570,8 @@ document.addEventListener('keydown', function (e) {
 
     const section = document.getElementById('work-samples');
     if (section && 'IntersectionObserver' in window) {
-        const obs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
+        const obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     setTimeout(calculateDimensions, 200);
                 }
@@ -581,15 +581,15 @@ document.addEventListener('keydown', function (e) {
     }
 
     window.__carousel = {
-        setSpeed: function (s) { speed = s; },
-        getSpeed: function () { return speed; },
-        pause: function () { isPaused = true; },
-        resume: function () { isPaused = false; }
+        setSpeed: function(s) { speed = s; },
+        getSpeed: function() { return speed; },
+        pause: function() { isPaused = true; },
+        resume: function() { isPaused = false; }
     };
 })();
 
 // ============================================
-// TESTIMONIALS AUTO CAROUSEL
+// TESTIMONIALS AUTO CAROUSEL (2 Items)
 // ============================================
 const track = document.getElementById('testimonialCarouselTrack');
 const dotsContainer = document.getElementById('testimonialDots');
@@ -602,18 +602,18 @@ let isTransitioning = false;
 function getItemsPerView() {
     if (window.innerWidth < 768) return 1;
     if (window.innerWidth < 1024) return 2;
-    return 3;
+    return 2; // Max 2 items since we only have 2 testimonials
 }
 
 function createDots() {
     if (!dotsContainer) return;
     const itemsPerView = getItemsPerView();
-    const totalDots = 3;
+    const totalDots = Math.ceil(totalItems / itemsPerView);
     dotsContainer.innerHTML = '';
     for (let i = 0; i < totalDots; i++) {
         const dot = document.createElement('button');
         dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.addEventListener('click', function () {
+        dot.addEventListener('click', function() {
             goToSlide(i * itemsPerView);
             resetAutoSlide();
         });
@@ -638,11 +638,11 @@ function goToSlide(index) {
 
     const dots = dotsContainer ? dotsContainer.querySelectorAll('.dot') : [];
     const activeDotIndex = Math.floor(currentIndex / itemsPerView);
-    dots.forEach(function (dot, i) {
+    dots.forEach(function(dot, i) {
         dot.classList.toggle('active', i === activeDotIndex);
     });
 
-    setTimeout(function () {
+    setTimeout(function() {
         isTransitioning = false;
     }, 800);
 }
@@ -674,9 +674,9 @@ if (track && items.length > 0) {
     startAutoSlide();
 
     let resizeTimeout;
-    window.addEventListener('resize', function () {
+    window.addEventListener('resize', function() {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function () {
+        resizeTimeout = setTimeout(function() {
             createDots();
             goToSlide(currentIndex);
             resetAutoSlide();
@@ -685,10 +685,10 @@ if (track && items.length > 0) {
 
     const carouselWrapper = document.querySelector('.testimonial-carousel-wrapper');
     if (carouselWrapper) {
-        carouselWrapper.addEventListener('mouseenter', function () {
+        carouselWrapper.addEventListener('mouseenter', function() {
             clearInterval(autoSlideInterval);
         });
-        carouselWrapper.addEventListener('mouseleave', function () {
+        carouselWrapper.addEventListener('mouseleave', function() {
             startAutoSlide();
         });
     }
@@ -699,8 +699,8 @@ if (track && items.length > 0) {
 // ============================================
 const videoSection = document.querySelector('.intro-video');
 if (videoSection) {
-    const videoObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
+    const videoObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 videoSection.style.opacity = '1';
                 videoSection.style.transform = 'translateY(0)';
@@ -729,13 +729,13 @@ if (video && soundToggle) {
         }
     }
 
-    soundToggle.addEventListener('click', function (e) {
+    soundToggle.addEventListener('click', function(e) {
         e.stopPropagation();
         video.muted = !video.muted;
         updateSoundIcon();
     });
 
-    video.play().catch(function () {
+    video.play().catch(function() {
         document.addEventListener('click', function playOnClick() {
             video.play();
             document.removeEventListener('click', playOnClick);
@@ -746,14 +746,37 @@ if (video && soundToggle) {
 }
 
 // ============================================
-// CONTACT FORM
+// CONTACT FORM – AJAX (fetch) with auto-reset
 // ============================================
 const form = document.getElementById('contactForm');
 if (form) {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
         const btn = this.querySelector('.btn');
+        const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         btn.disabled = true;
+
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('✅ Message sent successfully! I\'ll get back to you soon.');
+                this.reset();
+            } else {
+                alert('❌ Something went wrong. Please try again.');
+            }
+        })
+        .catch(() => {
+            alert('❌ Network error. Please check your connection and try again.');
+        })
+        .finally(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
     });
 }
 
@@ -763,7 +786,7 @@ if (form) {
 const backToTopBtn = document.getElementById('backToTop');
 
 if (backToTopBtn) {
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 400) {
             backToTopBtn.classList.add('visible');
         } else {
@@ -771,7 +794,7 @@ if (backToTopBtn) {
         }
     });
 
-    backToTopBtn.addEventListener('click', function () {
+    backToTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -782,14 +805,14 @@ if (backToTopBtn) {
 // ============================================
 // INITIALIZE
 // ============================================
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     createParticles();
     setTimeout(initECG, 500);
 
     let particleTimeout;
-    window.addEventListener('resize', function () {
+    window.addEventListener('resize', function() {
         clearTimeout(particleTimeout);
-        particleTimeout = setTimeout(function () {
+        particleTimeout = setTimeout(function() {
             const container = document.getElementById('particlesContainer');
             if (container) container.innerHTML = '';
             createParticles();
